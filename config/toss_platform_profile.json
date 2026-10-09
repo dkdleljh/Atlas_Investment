@@ -1,0 +1,20 @@
+{
+  "schema": "atlas_investment.toss_platform_profile.v1",
+  "broker": "toss_securities",
+  "basis": "Public Toss Securities product surface as of 2026-05-31; final API scope must follow official Open API docs when released.",
+  "supported_markets": ["KR", "US"],
+  "supported_asset_kinds": ["stock", "etf", "bond", "option"],
+  "conditional_asset_kinds": {
+    "etn": "Allow only when Toss official product/API universe explicitly marks the instrument tradable.",
+    "commodity": "Direct commodity trading is not assumed. Use Toss-supported commodity ETFs only.",
+    "fx": "Direct spot FX trading is not assumed. Use currency cash/환전 and FX exposure accounting only.",
+    "future": "Direct futures trading is not assumed until Toss official API explicitly supports it."
+  },
+  "excluded_asset_kinds": ["future", "fx", "commodity"],
+  "notes": [
+    "Toss Securities public product page lists stocks, ETFs, bonds, and US stock options.",
+    "Toss Securities has public materials about broad US stock/ETF availability and overseas bond service.",
+    "Official API may support a narrower subset than the app platform; API docs override this profile.",
+    "Atlas Investment must not route unsupported futures, direct FX, or direct commodity orders through Toss."
+  ]
+}

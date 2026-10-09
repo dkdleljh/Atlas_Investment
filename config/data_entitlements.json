@@ -1,0 +1,55 @@
+{
+  "schema": "atlas_investment.data_entitlements.v1",
+  "profile": "toss_official_kr_us_stock_etf_pilot",
+  "required_markets": [
+    "KR",
+    "US"
+  ],
+  "required_asset_kinds": [
+    "stock",
+    "etf"
+  ],
+  "require_survivorship_bias_free": false,
+  "require_corporate_actions_adjusted": false,
+  "providers": [
+    {
+      "name": "toss_official_openapi",
+      "licensed": true,
+      "markets": [
+        "KR",
+        "US"
+      ],
+      "asset_kinds": [
+        "stock",
+        "etf"
+      ],
+      "realtime_quotes": true,
+      "realtime_order_book": true,
+      "survivorship_bias_free": false,
+      "corporate_actions_adjusted": false,
+      "scope": [
+        "official account snapshots",
+        "official positions snapshots",
+        "official open orders snapshots",
+        "KR stock/ETF quote lookup",
+        "KR stock/ETF orderbook lookup",
+        "US stock/ETF quote lookup when supported by Toss official API",
+        "US stock/ETF order route when supported by Toss official API and buying power exists",
+        "manual-confirmed order route",
+        "pilot live_auto scope only"
+      ],
+      "limitations": [
+        "Not a survivorship-bias-free historical security master.",
+        "Not a corporate-action-adjusted institutional OHLCV feed.",
+        "Not evidence for global multi-asset hedge-fund promotion.",
+        "Does not permit margin or credit orders under Atlas policy."
+      ]
+    }
+  ],
+  "notes": [
+    "Do not mark sample/yfinance as licensed institutional data.",
+    "Toss official OpenAPI is recorded only for its verified account/order/quote/orderbook scope.",
+    "This pilot profile intentionally limits live_auto eligibility to KR/US stock and ETF routes inside Toss official API support.",
+    "Add a separate institutional profile before claiming global multi-asset hedge-fund readiness."
+  ]
+}

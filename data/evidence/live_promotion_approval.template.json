@@ -1,0 +1,28 @@
+{
+  "approved": false,
+  "approved_for": "live_auto",
+  "signed_by": "",
+  "approved_at": "",
+  "scope": {
+    "mode": "live_auto",
+    "markets": [],
+    "allowed_symbols": [],
+    "excluded_symbols": [],
+    "max_single_order_krw": 0,
+    "max_daily_order_krw": 0,
+    "max_daily_loss_krw": 0,
+    "min_cash_ratio": 0.15,
+    "margin_allowed": false,
+    "credit_allowed": false
+  },
+  "required_evidence": {
+    "dry_run_business_days": 30,
+    "paper_business_days": 30,
+    "read_only_reconciliation_business_days": 10,
+    "manual_small_order_trials": 1
+  },
+  "notes": [
+    "This is a template only. Do not rename to live_promotion_approval.json unless the owner explicitly approves live_auto after all evidence gates pass.",
+    "Atlas must continue to block live_auto while approved is false or required fields are empty."
+  ]
+}

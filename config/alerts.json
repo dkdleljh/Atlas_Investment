@@ -1,0 +1,47 @@
+{
+  "schema": "atlas_investment.alerts.v1",
+  "enabled": true,
+  "channels": [
+    {
+      "type": "local_file",
+      "path": "data/reports/alerts_outbox.jsonl"
+    }
+  ],
+  "ignored_report_names": [
+    "global_gap_audit.json",
+    "hedgefund_readiness.json",
+    "strategy_readiness_scalping_simulation.json"
+  ],
+  "rules": [
+    {
+      "name": "blocked_status",
+      "severity": "critical",
+      "condition": "any_report_status_blocked",
+      "action": "notify_and_block_new_orders"
+    },
+    {
+      "name": "degraded_status",
+      "severity": "warning",
+      "condition": "any_required_report_status_degraded",
+      "action": "notify_and_require_review"
+    },
+    {
+      "name": "data_stale",
+      "severity": "critical",
+      "condition": "market_data_stale",
+      "action": "block_strategy_and_order_generation"
+    },
+    {
+      "name": "broker_reconciliation_drift",
+      "severity": "critical",
+      "condition": "broker_state_differs_from_internal_state",
+      "action": "block_new_orders"
+    }
+  ],
+  "notes": [
+    "Local-file alerting is enabled by default so unattended checks leave an audit trail.",
+    "Add Telegram, email, Slack, or another external delivery channel only after secrets are stored outside git.",
+    "Lab-only strategy readiness reports can be ignored by alert aggregation when the strategy is not in the active live promotion universe; the source report remains blocked for audit.",
+    "Global hedge-fund readiness reports are tracked separately from the limited KR/US stock/ETF pilot live_auto scope."
+  ]
+}

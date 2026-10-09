@@ -1,0 +1,7 @@
+{
+  "base_order_amount_krw": 100000,
+  "target_position_weight": 0.05,
+  "markets": ["KR", "US"],
+  "enabled_strategies": ["momentum", "quality", "inverse_hedge"]
+}
+

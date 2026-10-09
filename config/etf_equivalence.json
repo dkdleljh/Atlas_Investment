@@ -1,0 +1,75 @@
+{
+  "schema": "atlas_investment.etf_equivalence.v1",
+  "data_note": "Sample values for local optimization smoke tests. Refresh expense/liquidity figures before live investment decisions.",
+  "candidates": [
+    {
+      "symbol": "379810",
+      "name": "KODEX 미국나스닥100TR",
+      "exposure_group": "NASDAQ100_KR_UNHEDGED",
+      "currency": "KRW",
+      "hedged": false,
+      "annual_expense_rate": 0.0005,
+      "other_expense_rate": 0.0006,
+      "tracking_error_rate": 0.0004,
+      "estimated_spread_rate": 0.0007,
+      "trade_fee_rate": 0.00015,
+      "sell_tax_rate": 0.0,
+      "average_daily_value_krw": 4000000000,
+      "discount_premium_rate": 0.0002,
+      "notes": [
+        "샘플 값입니다. 실제 보수/거래대금은 운용사·거래소 데이터로 갱신해야 합니다."
+      ]
+    },
+    {
+      "symbol": "133690",
+      "name": "TIGER 미국나스닥100",
+      "exposure_group": "NASDAQ100_KR_UNHEDGED",
+      "currency": "KRW",
+      "hedged": false,
+      "annual_expense_rate": 0.0007,
+      "other_expense_rate": 0.0005,
+      "tracking_error_rate": 0.0003,
+      "estimated_spread_rate": 0.0005,
+      "trade_fee_rate": 0.00015,
+      "sell_tax_rate": 0.0,
+      "average_daily_value_krw": 9000000000,
+      "discount_premium_rate": 0.0001,
+      "notes": [
+        "거래대금과 스프레드가 좋은 후보로 가정한 샘플입니다."
+      ]
+    },
+    {
+      "symbol": "367380",
+      "name": "ACE 미국나스닥100",
+      "exposure_group": "NASDAQ100_KR_UNHEDGED",
+      "currency": "KRW",
+      "hedged": false,
+      "annual_expense_rate": 0.0004,
+      "other_expense_rate": 0.0004,
+      "tracking_error_rate": 0.0005,
+      "estimated_spread_rate": 0.0009,
+      "trade_fee_rate": 0.00015,
+      "sell_tax_rate": 0.0,
+      "average_daily_value_krw": 1200000000,
+      "discount_premium_rate": 0.0002,
+      "notes": [
+        "보유비용은 낮지만 스프레드/유동성도 함께 확인해야 하는 샘플입니다."
+      ]
+    },
+    {
+      "symbol": "069500",
+      "name": "KODEX 200",
+      "exposure_group": "KOSPI200_KR",
+      "currency": "KRW",
+      "hedged": false,
+      "annual_expense_rate": 0.00015,
+      "other_expense_rate": 0.0002,
+      "tracking_error_rate": 0.0002,
+      "estimated_spread_rate": 0.0002,
+      "trade_fee_rate": 0.00015,
+      "sell_tax_rate": 0.0,
+      "average_daily_value_krw": 20000000000,
+      "discount_premium_rate": 0.00005
+    }
+  ]
+}

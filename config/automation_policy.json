@@ -1,0 +1,55 @@
+{
+  "schema": "atlas_investment.automation_policy.v1",
+  "mode": "paper",
+  "live_auto_allowed": false,
+  "require_manual_promotion": true,
+  "live_auto_scope": {
+    "profile": "kr_us_stock_etf_pilot",
+    "broker_and_data_scope": "Toss Securities official API only",
+    "allowed_markets": [
+      "KR",
+      "US"
+    ],
+    "allowed_asset_kinds": [
+      "stock",
+      "etf"
+    ],
+    "max_single_order_krw": 20000,
+    "max_daily_order_krw": 50000,
+    "max_daily_loss_krw": 20000,
+    "margin_allowed": false,
+    "credit_allowed": false
+  },
+  "loop_interval_seconds": 300,
+  "max_consecutive_failures": 3,
+  "lock_file": "data/runtime/atlas_investment.lock",
+  "heartbeat_file": "data/runtime/heartbeat.json",
+  "preflight_commands": [
+    "healthcheck",
+    "integration-check",
+    "reconciliation-check",
+    "promotion-evidence",
+    "alerts-check"
+  ],
+  "daily_commands": [
+    "daily-data-refresh --vendor hybrid",
+    "dart-event-signals --days 7 --limit 20",
+    "dashboard-html"
+  ],
+  "intraday_commands": [
+    "healthcheck",
+    "realtime-smoke"
+  ],
+  "post_market_commands": [
+    "ops-report",
+    "dashboard-html"
+  ],
+  "hard_blocks": [
+    "missing_official_live_order_api",
+    "missing_read_only_reconciliation",
+    "data_quality_blocked",
+    "risk_controls_blocked",
+    "manual_review_required",
+    "margin_or_credit_order"
+  ]
+}

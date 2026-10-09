@@ -1,0 +1,27 @@
+{
+  "base_currency": "KRW",
+  "annual_management_fee_rate": 0.01,
+  "performance_fee_rate": 0.0,
+  "hurdle_rate": 0.0,
+  "high_water_mark_krw": 0,
+  "markets": {
+    "KR": {
+      "commission_rate": 0.00015,
+      "slippage_rate": 0.0005,
+      "sell_tax_rate": 0.0018,
+      "fx_spread_rate": 0.0
+    },
+    "US": {
+      "commission_rate": 0.0005,
+      "slippage_rate": 0.0007,
+      "sell_tax_rate": 0.0,
+      "fx_spread_rate": 0.001
+    }
+  },
+  "custody_admin_annual_rate": 0.001,
+  "notes": [
+    "정책값은 샘플 기본값입니다. 실제 브로커 수수료/세금/환전 조건 확인 후 갱신해야 합니다.",
+    "운용보수와 보관/관리비는 일할 계산합니다.",
+    "성과보수는 high-water mark와 hurdle rate 초과분에만 적용합니다."
+  ]
+}
